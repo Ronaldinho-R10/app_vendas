@@ -1,0 +1,11 @@
+<h1>Cadastrar Produtos</h1>
+<%= link_to 'Voltar', produtos_path, class: 'btn btn-primary' %>
+<%= simple_form_for @produto do |f| %>
+ <%= f.input :nome_produto, required: true, label: 'Nome do Produto' %>
+ <%= f.input :valor_compra,  label: "Valor do Produto" %>
+ <%= f.input :quantidade, required: true, label: "Quantidade" %>
+ <%= f.input :categoria, required: true, label: "Categoria" %>
+ <%= f.input :categoria, required: true, label: "Fornecedor" %>
+ <br>
+ <%= f.button :submit, 'Enviar', class: 'btn-primary' %>
+<% end %>

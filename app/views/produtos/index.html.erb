@@ -1,0 +1,27 @@
+<h1>Produtos</h1>
+<%= link_to 'Cadastrar', new_produto_path, class: 'btn btn-primary' %>
+<% if @produto.empty? %>
+ <p>Nenhum Produto encontrado</p>
+<% else %>
+ <table class = "table table-bordered table-hover">
+ <thead>
+
+ <th>Nome</th>
+ <th>Quntidade</th>
+ <th>Preço</th>
+ <th>Categoria</th>
+ <th>Fornecedor</th>
+ </thead>
+ <tbody>
+ <% @produto.each do |produto| %>
+ <tr>
+ <td><%= produto.nome_produto %></td>
+ <td><%= produto.quantidade %></td>
+ <td><%= produto.valor_compra %></td>
+ <td><%= produto.categoria %></td>
+ <td><%= produto.fornecedor %></td>
+ </tr>
+ <% end %>
+ </tbody>
+ </table>
+<% end %>
